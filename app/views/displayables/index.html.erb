@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Displayables</h1>
+
+<div id="displayables">
+  <% @displayables.each do |displayable| %>
+    <%= render displayable %>
+    <p>
+      <%= link_to "Show this displayable", displayable %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New displayable", new_displayable_path %>

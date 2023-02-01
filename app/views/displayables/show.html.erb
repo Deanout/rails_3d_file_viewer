@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @displayable %>
+
+<div>
+  <%= link_to "Edit this displayable", edit_displayable_path(@displayable) %> |
+  <%= link_to "Back to displayables", displayables_path %>
+
+  <%= button_to "Destroy this displayable", @displayable, method: :delete %>
+</div>

@@ -1,0 +1,32 @@
+<div id="<%= dom_id displayable %>">
+  <p>
+    <strong>Name:</strong>
+    <%= displayable.name %>
+  </p>
+  <p>
+    <strong>Color:</strong>
+    <%= displayable.color %>
+  </p>
+  <p>
+    <strong>Flatshading:</strong>
+    <%= displayable.flatshading %>
+  </p>
+  <p>
+    <strong>File:</strong>
+    <%= displayable.file %>
+  </p>
+  <p>
+    <strong>File:</strong>
+    <%= displayable.material %>
+  </p>
+  <% file = url_for(displayable.file) if displayable.file.attached? %>
+  <% material = url_for(displayable.material) if displayable.material.attached? %>
+  <%= content_tag(:canvas, "", data: {
+    controller: "objects",
+    # This is the .obj file that will be loaded into the scene
+    object: file,
+    material: material,
+    color: displayable.color,
+    flatshading: displayable.flatshading
+  }) %>
+</div>
